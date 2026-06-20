@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIM Owner Details PK</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg-dark:#070b1e;
+    --card-bg:#0f1633;
+    --text-main:#ffffff;
+    --text-muted:#7e8ebc;
+    --accent-pink:linear-gradient(135deg,#ec008c 0%,#fc6767 100%);
+    --btn-blue:linear-gradient(90deg,#00c6ff 0%,#0072ff 100%);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:var(--bg-dark);
+    color:var(--text-main);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+}
+
+header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+header h1{
+    font-size:28px;
+    background:var(--btn-blue);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    color:var(--text-muted);
+    margin-top:8px;
+}
+
+.search-card{
+    background:var(--card-bg);
+    padding:30px 20px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.05);
+    text-align:center;
+}
+
+.search-card h2{
+    margin-bottom:10px;
+}
+
+.search-card p{
+    color:var(--text-muted);
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.input-group input{
+    width:100%;
+    padding:16px;
+    border-radius:30px;
+    border:2px solid #1a234a;
+    background:#090e26;
+    color:#fff;
+    outline:none;
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.btn-submit{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:30px;
+    background:var(--accent-pink);
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-submit:hover{
+    transform:translateY(-2px);
+}
+
+footer{
+    text-align:center;
+    margin-top:25px;
+    color:var(--text-muted);
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<h1><i class="fa-solid fa-database"></i> SIM Owner Details PK</h1>
+<p>Verification & Database Portal</p>
+</header>
+
+<div class="search-card">
+
+<h2>Number Details</h2>
+
+<p>Enter Mobile Number or CNIC Number below.</p>
+
+<form onsubmit="handleRedirect(event)">
+
+<div class="input-group">
+<input
+type="text"
+id="searchQuery"
+placeholder="Enter Mobile / CNIC Number"
+required>
+</div>
+
+<button type="submit" class="btn-submit">
+SEARCH LIVE DATABASE
+</button>
+
+</form>
+
+</div>
+
+<footer>
+Copyright © 2026 Create by Kamran Khan
+</footer>
+
+</div>
+
+<script>
+function handleRedirect(event){
+    event.preventDefault();
+
+    const query = document.getElementById("searchQuery").value.trim();
+
+    if(query===""){
+        return;
+    }
+
+    const targetUrl = "https://simownerdetailspk.com/?number=";
+
+    window.location.href = targetUrl + encodeURIComponent(query);
+}
+</script>
+
+</body>
+  </html>
